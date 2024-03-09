@@ -15,7 +15,17 @@ router.get('/', (req, res) => {
         pic: '/images/carnita.jpg'
       }]
       
+
+      router.get('/new', (req, res) => {
+        res.render('places/new')
+      })
+      
+
+
     res.render('places/index', { places })
 })
+
+
+
 
 module.exports = router
