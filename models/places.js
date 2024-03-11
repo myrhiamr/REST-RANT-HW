@@ -3,11 +3,11 @@ module.exports = [{
     city: 'San Diego',
     state: 'CA',
     cuisines: 'Urban',
-    pic: 'carnita.jpg'
+    pic: '/images/carnita.jpg'
 }, {
     name: 'Crudo',
     city: 'San Diego',
     state: 'CA',
     cuisines: 'Mariscos',
-    pic: 'ceviche.jpg'
+    pic: '/images/ceviche.jpg'
 }]
