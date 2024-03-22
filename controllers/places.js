@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
   .then(() => {
       res.redirect('/places')
   })
-  .catch(err => {
+   .catch(err => {
       console.log('err', err)
       res.render('error404')
   })
@@ -30,8 +30,13 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
-  .then()
-  .catch()
+  .then(place => {
+      res.render('places/show', { place })
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
 
 router.put('/:id', (req, res) => {
@@ -53,6 +58,11 @@ router.post('/:id/rant', (req, res) => {
 router.delete('/:id/rant/:rantId', (req, res) => {
     res.send('GET /places/:id/rant/:rantId stub')
 })
+
+
+
+
+
 
 module.exports = router
 
