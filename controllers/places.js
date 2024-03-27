@@ -17,11 +17,17 @@ router.post('/', (req, res) => {
   .then(() => {
       res.redirect('/places')
   })
-   .catch(err => {
-      console.log('err', err)
-      res.render('error404')
+  .catch(err => {
+      if (err && err.name == 'ValidationError') {
+          // TODO: Generate error message(s)
+      }
+      else {
+          res.render('error404')
+      }
   })
 })
+
+
 
 
 router.get('/new', (req, res) => {
